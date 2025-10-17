@@ -16,7 +16,8 @@ class OrderField(models.PositiveIntegerField):
                     # filter by objects with the same field values
                     # for the fields in "for_fields"
                     query = {
-                        field: getattr(model_instance, field) for field in self.for_fields
+                        field: getattr(model_instance, field)
+                        for field in self.for_fields
                     }
                     qs = qs.filter(**query)
                 # get the order of the last item
